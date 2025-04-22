@@ -44,7 +44,9 @@ Run:
 ```
 
 <model_path>: path to pre-trained model
+
 <training_data_file>: training data file (ensuring resolution, grids, and channel counts are are the same as the training). Using the instructions from _QM9 data (required for both generation and training)_ and having run _QM9 model training_ command, the name should be `qm9_data_explicit_hydrogen_033_res.bin`.
+
 <save_file_name>: filename for the generated molecules. The path under which it is saved is the same as the "model_path" in config_paths_local.yml.
 
 
@@ -77,6 +79,7 @@ Before generating, please follow the steps from the previous subsection (_Data_)
 ```
 
 <model_path>: path to pre-trained model
+
 <save_file_name>: filename for the generated molecules. The path under which it is saved is the same as the "model_path" in config_paths_local.yml.
 
 
