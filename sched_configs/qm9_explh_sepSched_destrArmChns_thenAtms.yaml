@@ -1,0 +1,29 @@
+cahnnel_sched:
+  atm_chn:
+    inds:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+    beta_sched: 
+      type: cosine_nu
+      beta_sched_params: 
+        nu: 1
+  bnd_chn:
+    inds:
+      - 5
+      - 6
+      - 7
+    beta_sched: 
+      type: cosine_nu
+      beta_sched_params: 
+        nu: 1.5
+  arom_chn:
+    inds:
+      - 8
+      - 9
+    beta_sched: 
+      type: cosine_nu
+      beta_sched_params: 
+        nu: 2
