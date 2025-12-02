@@ -610,10 +610,10 @@ def setup_data_files(args, Smiles,train_valid_test,atoms=None,atom_pos=None,add_
                 all_atom_symbols = {set:all_atom_symbols[ind] for ind,set in enumerate(['train','valid','test'])}
                 all_bonds = {set:all_bonds[ind] for ind,set in enumerate(['train','valid','test'])}
                 all_cond_variables = {set:all_cond_variables[ind] for ind,set in enumerate(['train','valid','test'])}
-
+            path = os.path.join(data_path, args.data_file + ".bin")
             pickle.dump([x_grid, y_grid, z_grid, all_coords, all_smiles,all_atom_symbols,all_bonds,all_cond_variables], \
-                        open(data_path + args.data_file+".bin", "wb"))
-            print("Done extracting the datapoitns. Exiting...")
+                        open(path, "wb"))
+            print(f"Done extracting the datapoitns. Saved training file in {path} Exiting...")
             exit(1)
 
 
@@ -2862,7 +2862,10 @@ def get_atom_no_dist_geom(data_path=None, explicit_h=False):
     
 def get_atom_no_dist(file="qm9edm_99data_explicit_aromatic_explicit_hydrogen_033.bin", plot=False, geom=False, data_path=None, explicit_h=False,consider_arom_chns_as_atms=False):
     # if "geom_data" in file: return get_atom_no_dist_geom(data_path=data_path, explicit_h=explicit_h)
-    data = pickle.load(open(os.path.join(data_path,f"{file.replace('.bin','')}.bin"), "rb"))
+    if os.path.exists(file):
+        data = pickle.load(open(file, "rb"))
+    else:
+        data = pickle.load(open(os.path.join(data_path,file), "rb"))
 
     if geom:
         atoms = []

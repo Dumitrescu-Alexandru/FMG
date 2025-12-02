@@ -29,7 +29,7 @@ The results of this paper are based on the generated molecules found under `gene
 
 - go to `data/qm9/data/qm9_edm`.
 - run `python create_edm_data_splits.py`. This will create `train.npz`, `test.npz`, `valid.npz` in `data/qm9/data/qm9_edm/qm9`.
-- run training (from Section _QM9 model training_). This automatically creates correct format training file and saves it with the name specified in `--data_file` argument. Saved in `data/qm9/data`.
+- run training after going back to the main project directory (from Section _QM9 model training_). This automatically creates correct format training file and saves it with the name specified in `--data_file` argument. Saved in `data/qm9/data`.
 - if you want to train the model, you can rerun the same training command
 
 ### Generating
